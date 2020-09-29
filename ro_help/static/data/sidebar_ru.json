@@ -1,0 +1,50 @@
+[
+  {
+    "app": "Узнай что тебе нужно сделать",
+    "call_to_action": "Учись, что тебе нужно делать во время эпидемии Covid-19",
+    "description": "",
+    "button_text": "Что я должен делать",
+    "color": "#ffdd57",
+    "url": "https://cemafac.ro/"
+  },
+  {
+    "app": "Официальные новости",
+    "call_to_action": "Официальные новости и информация на каждый день",
+    "description": "",
+    "button_text": "Самая свежая информация",
+    "color": "#05d6c8",
+    "url": "https://stirioficiale.ro/informatii"
+  },
+  {
+    "app": "Данные на каждый день",
+    "call_to_action": "Данные на каждый день",
+    "description": "",
+    "button_text": "Смотри тут данные на каждый день",
+    "color": "#f5bcd6",
+    "url": "https://datelazi.ro/"
+  },
+    {
+    "app": "Diaspora Hub",
+    "call_to_action": "Ты за границей?",
+    "description": "",
+    "button_text": "Информируй себя на Diaspora Hub",
+    "color": "#38b6ff",
+    "url": "https://diasporahub.ro"
+  },
+  {
+    "app": "Расширение Chrome",
+    "call_to_action": "Устнови расширение Chrome чтобы быть в курсе об фэйковых новостях",
+    "description": "",
+    "button_text": "Установи расширение",
+    "color": "#05d6c8",
+    "url": "https://chrome.google.com/webstore/detail/covid-19-%C8%99tiri-oficiale/pdcpkplohipjhdfdchpmgekifmcdbnha"
+  },
+  {
+    "app": "Расширение Firefox",
+    "call_to_action": "Учстнови расширение Firefox чтобы быть в курсе об фэйковых новостях",
+    "description": "",
+    "button_text": "Установи расширение",
+    "color": "#05d6c8",
+    "url": "https://addons.mozilla.org/en-US/firefox/addon/covid-19-%C8%99tiri-oficiale/"
+  }
+]

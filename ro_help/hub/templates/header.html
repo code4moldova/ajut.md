@@ -5,7 +5,7 @@
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
                 <a class="navbar-item" href="{% url 'ngos' %}">
-                    <img src="{% static "images/logo.svg" %}" alt="Code for Romania logo" width="160" height="50">
+                    <img src="{% static "images/logo.svg" %}" alt="Code for Moldova logo" width="160" height="50">
                 </a>
 
                 <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
@@ -55,7 +55,9 @@
                             <div class="select">
                               <select id="language" name="language" onchange="this.form.submit()">
                                 {% for language in LANGUAGES %}
-                                <option {% if language.0 == LANGUAGE_CODE %} selected {% endif %} name="language" value="{{language.0}}">{{language.0 | upper}}</option>
+                                <option {% if language.0 == LANGUAGE_CODE %} selected {% endif %} name="language" value="{{language.0}}">
+                                    {{language.0 | upper}}
+                                </option>
                                 {% endfor %}
                               </select>
                             </div>
