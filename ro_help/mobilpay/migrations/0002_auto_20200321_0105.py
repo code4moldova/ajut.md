@@ -12,7 +12,10 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveField(model_name="paymentresponse", name="r",),
+        migrations.RemoveField(
+            model_name="paymentresponse",
+            name="r",
+        ),
         migrations.AddField(
             model_name="paymentorder",
             name="date",
@@ -22,7 +25,9 @@ class Migration(migrations.Migration):
             preserve_default=False,
         ),
         migrations.AddField(
-            model_name="paymentresponse", name="action", field=models.CharField(blank=True, max_length=100, null=True),
+            model_name="paymentresponse",
+            name="action",
+            field=models.CharField(blank=True, max_length=100, null=True),
         ),
         migrations.AddField(
             model_name="paymentresponse",

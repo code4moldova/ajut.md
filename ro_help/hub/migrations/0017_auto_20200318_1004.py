@@ -10,7 +10,10 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveField(model_name="registerngorequest", name="coverage",),
+        migrations.RemoveField(
+            model_name="registerngorequest",
+            name="coverage",
+        ),
         migrations.AddField(
             model_name="registerngorequest",
             name="address",

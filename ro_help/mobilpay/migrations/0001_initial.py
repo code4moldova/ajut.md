@@ -51,7 +51,10 @@ class Migration(migrations.Migration):
                     ),
                 ),
             ],
-            options={"verbose_name": "Payment Order", "verbose_name_plural": "Payment Orders",},
+            options={
+                "verbose_name": "Payment Order",
+                "verbose_name_plural": "Payment Orders",
+            },
         ),
         migrations.CreateModel(
             name="PaymentResponse",
@@ -77,6 +80,9 @@ class Migration(migrations.Migration):
                     ),
                 ),
             ],
-            options={"verbose_name": "Payment Order", "verbose_name_plural": "Payment Orders",},
+            options={
+                "verbose_name": "Payment Order",
+                "verbose_name_plural": "Payment Orders",
+            },
         ),
     ]

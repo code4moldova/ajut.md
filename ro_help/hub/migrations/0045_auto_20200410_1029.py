@@ -12,7 +12,8 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AlterModelOptions(
-            name="ngoreportitem", options={"verbose_name": "Report", "verbose_name_plural": "Report"},
+            name="ngoreportitem",
+            options={"verbose_name": "Report", "verbose_name_plural": "Report"},
         ),
         migrations.AlterField(
             model_name="ngo",

@@ -55,6 +55,10 @@ class Migration(migrations.Migration):
                     ),
                 ),
             ],
-            options={"ordering": ("-modified", "-created"), "get_latest_by": "modified", "abstract": False,},
+            options={
+                "ordering": ("-modified", "-created"),
+                "get_latest_by": "modified",
+                "abstract": False,
+            },
         ),
     ]

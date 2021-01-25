@@ -4,7 +4,7 @@ from xml.dom.minidom import Document
 class Crc:
     def __init__(self, error_code, error_type, error_message):
         """
-            error_code, error_type, error_message
+        error_code, error_type, error_message
         """
         self.error_code = error_code
         self.error_type = error_type

@@ -96,5 +96,8 @@ class Migration(migrations.Migration):
                 blank=True, help_text="Motivate your decision", max_length=500, null=True, verbose_name="Motivation"
             ),
         ),
-        migrations.AlterUniqueTogether(name="registerngorequestvote", unique_together={("ngo_request", "entity")},),
+        migrations.AlterUniqueTogether(
+            name="registerngorequestvote",
+            unique_together={("ngo_request", "entity")},
+        ),
     ]

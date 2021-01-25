@@ -26,14 +26,23 @@ class Migration(migrations.Migration):
                 ),
                 ("name", models.CharField(max_length=30, verbose_name="Name")),
             ],
-            options={"ordering": ("-modified", "-created"), "get_latest_by": "modified", "abstract": False,},
+            options={
+                "ordering": ("-modified", "-created"),
+                "get_latest_by": "modified",
+                "abstract": False,
+            },
         ),
-        migrations.AlterModelOptions(name="ngo", options={"verbose_name": "NGO", "verbose_name_plural": "NGOs"},),
         migrations.AlterModelOptions(
-            name="ngohelper", options={"verbose_name": "NGO Helpers", "verbose_name_plural": "NGO Helper"},
+            name="ngo",
+            options={"verbose_name": "NGO", "verbose_name_plural": "NGOs"},
         ),
         migrations.AlterModelOptions(
-            name="ngoneed", options={"verbose_name": "NGO need", "verbose_name_plural": "NGO needs"},
+            name="ngohelper",
+            options={"verbose_name": "NGO Helpers", "verbose_name_plural": "NGO Helper"},
+        ),
+        migrations.AlterModelOptions(
+            name="ngoneed",
+            options={"verbose_name": "NGO need", "verbose_name_plural": "NGO needs"},
         ),
         migrations.AlterField(
             model_name="ngo",
@@ -94,7 +103,9 @@ class Migration(migrations.Migration):
             ),
         ),
         migrations.AlterField(
-            model_name="ngohelper", name="read", field=models.BooleanField(default=False, verbose_name="Read on"),
+            model_name="ngohelper",
+            name="read",
+            field=models.BooleanField(default=False, verbose_name="Read on"),
         ),
         migrations.AlterField(
             model_name="ngoneed",

@@ -14,13 +14,16 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AlterModelOptions(
-            name="ngo", options={"get_latest_by": "modified", "ordering": ("-modified", "-created")},
+            name="ngo",
+            options={"get_latest_by": "modified", "ordering": ("-modified", "-created")},
         ),
         migrations.AlterModelOptions(
-            name="ngoneed", options={"get_latest_by": "modified", "ordering": ("-modified", "-created")},
+            name="ngoneed",
+            options={"get_latest_by": "modified", "ordering": ("-modified", "-created")},
         ),
         migrations.AlterModelOptions(
-            name="personalrequest", options={"get_latest_by": "modified", "ordering": ("-modified", "-created")},
+            name="personalrequest",
+            options={"get_latest_by": "modified", "ordering": ("-modified", "-created")},
         ),
         migrations.AddField(
             model_name="ngo",

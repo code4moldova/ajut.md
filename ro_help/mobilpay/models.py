@@ -22,7 +22,9 @@ class PaymentOrder(TimeStampedModel):
         default=False, verbose_name="Sunt de acord ca numele meu să apară pe platforma RoHelp"
     )
     phone = models.CharField(_("Phone"), max_length=30)
-    email = models.EmailField(_("Email"),)
+    email = models.EmailField(
+        _("Email"),
+    )
     address = models.CharField(_("Address"), max_length=254)
     details = models.TextField(_("Details"))
     amount = models.FloatField(_("Amount"))

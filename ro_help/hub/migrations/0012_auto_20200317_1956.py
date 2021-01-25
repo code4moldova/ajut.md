@@ -12,9 +12,13 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AlterModelOptions(name="ngo", options={"verbose_name_plural": "ONG-uri"},),
         migrations.AlterModelOptions(
-            name="ngoneed", options={"verbose_name": "Nevoie ONG", "verbose_name_plural": "Nevoi ONG"},
+            name="ngo",
+            options={"verbose_name_plural": "ONG-uri"},
+        ),
+        migrations.AlterModelOptions(
+            name="ngoneed",
+            options={"verbose_name": "Nevoie ONG", "verbose_name_plural": "Nevoi ONG"},
         ),
         migrations.AddField(
             model_name="ngo",

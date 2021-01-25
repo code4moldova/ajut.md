@@ -130,7 +130,9 @@ class NGOAdmin(admin.ModelAdmin):
 
             if not self.has_accounts(request.POST, int(no_accounts)):
                 self.message_user(
-                    request, _("To accept IBAN Transfers you need to add at least one account."), level=messages.ERROR,
+                    request,
+                    _("To accept IBAN Transfers you need to add at least one account."),
+                    level=messages.ERROR,
                 )
                 ngo.accepts_transfer = False
                 ngo.save()
@@ -138,7 +140,11 @@ class NGOAdmin(admin.ModelAdmin):
         NGONeed.objects.filter(ngo=ngo, kind=KIND.MONEY).delete()
         if ngo.accepts_transfer or ngo.accepts_mobilpay:
             need, created = NGONeed.objects.get_or_create(
-                ngo=ngo, title=ngo.name, kind=KIND.MONEY, city=ngo.city, county=ngo.county,
+                ngo=ngo,
+                title=ngo.name,
+                kind=KIND.MONEY,
+                city=ngo.city,
+                county=ngo.county,
             )
             need.description = ngo.donations_description
             need.save()
@@ -550,7 +556,7 @@ class RegisterNGORequestVoteAdmin(admin.ModelAdmin):
 
 @admin.register(City)
 class CityAdmin(admin.ModelAdmin):
-    """ City admin page
+    """City admin page
 
     At this moment, only the superadmin is allowed to import new cities and
     change existing ones.

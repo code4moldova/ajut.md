@@ -19,9 +19,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib.auth import views as auth_views
-from django.views.generic import TemplateView
 
-from ro_help.views import StaticPageView
+from .views import StaticPageView
 
 
 urlpatterns = (
@@ -56,4 +55,6 @@ urlpatterns = (
 if settings.DEBUG:
     import debug_toolbar
 
-    urlpatterns = [path("__debug__/", include(debug_toolbar.urls)),] + urlpatterns
+    urlpatterns = [
+        path("__debug__/", include(debug_toolbar.urls)),
+    ] + urlpatterns

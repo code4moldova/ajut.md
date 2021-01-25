@@ -1,7 +1,6 @@
 import json
 
 from django.utils import translation
-from django.utils.translation import ugettext_lazy as _
 from django.views.generic.base import TemplateView
 
 

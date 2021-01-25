@@ -20,7 +20,9 @@ class Migration(migrations.Migration):
             ),
         ),
         migrations.AlterField(
-            model_name="ngo", name="donations_description", field=models.TextField(blank=True, null=True),
+            model_name="ngo",
+            name="donations_description",
+            field=models.TextField(blank=True, null=True),
         ),
         migrations.AlterField(
             model_name="ngo",

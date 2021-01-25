@@ -11,13 +11,23 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AlterField(
-            model_name="ngo", name="description", field=models.TextField(verbose_name="Description"),
-        ),
-        migrations.AlterField(model_name="ngohelper", name="message", field=models.TextField(verbose_name="Message"),),
-        migrations.AlterField(
-            model_name="ngoneed", name="description", field=models.TextField(verbose_name="Description"),
+            model_name="ngo",
+            name="description",
+            field=models.TextField(verbose_name="Description"),
         ),
         migrations.AlterField(
-            model_name="personalrequest", name="description", field=models.TextField(verbose_name="Description"),
+            model_name="ngohelper",
+            name="message",
+            field=models.TextField(verbose_name="Message"),
+        ),
+        migrations.AlterField(
+            model_name="ngoneed",
+            name="description",
+            field=models.TextField(verbose_name="Description"),
+        ),
+        migrations.AlterField(
+            model_name="personalrequest",
+            name="description",
+            field=models.TextField(verbose_name="Description"),
         ),
     ]

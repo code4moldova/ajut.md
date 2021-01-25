@@ -38,13 +38,23 @@ class Migration(migrations.Migration):
             field=models.BooleanField(default=False, verbose_name="Accepts transfers"),
         ),
         migrations.AddField(
-            model_name="ngo", name="cif", field=models.CharField(blank=True, max_length=20, null=True),
+            model_name="ngo",
+            name="cif",
+            field=models.CharField(blank=True, max_length=20, null=True),
         ),
         migrations.AddField(
-            model_name="ngo", name="cui", field=models.CharField(blank=True, max_length=20, null=True),
+            model_name="ngo",
+            name="cui",
+            field=models.CharField(blank=True, max_length=20, null=True),
         ),
-        migrations.AddField(model_name="ngo", name="donations_description", field=models.TextField(null=True),),
         migrations.AddField(
-            model_name="ngo", name="ibans", field=models.ManyToManyField(null=True, to="hub.NGOAccount"),
+            model_name="ngo",
+            name="donations_description",
+            field=models.TextField(null=True),
+        ),
+        migrations.AddField(
+            model_name="ngo",
+            name="ibans",
+            field=models.ManyToManyField(null=True, to="hub.NGOAccount"),
         ),
     ]

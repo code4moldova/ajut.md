@@ -55,7 +55,7 @@ pip install <my cool dependency>
 
 We're using black for formatting and each push is checked against it. Running 
 ```bash
-black --line-length 120 --target-version py37
+black --line-length 120 --target-version py38
 ```
 before a commit will do the trick.
 

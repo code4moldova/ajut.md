@@ -17,7 +17,7 @@ from django.utils.translation import ugettext_lazy as _
 
 import environ
 
-root = environ.Path(__file__) - 3  # three folder back (/a/b/c/ - 3 = /)
+root = environ.Path(__file__) - 4  # four levels back (/ro_help/ro_help/settings/base.py - 4 = /)
 env = environ.Env(
     # set casting, default value
     DEBUG=(bool, True),
@@ -114,11 +114,16 @@ DATABASES = {
     # exception if not found
     "default": env.db("DATABASE_URL"),
     # read os.environ["SQLITE_URL"]
-    "extra": env.db("SQLITE_URL", default=f"sqlite:///{os.path.join(BASE_DIR, 'db.sqlite3'),}",),
+    "extra": env.db(
+        "SQLITE_URL",
+        default=f"sqlite:///{os.path.join(BASE_DIR, 'db.sqlite3'),}",
+    ),
 }
 
 CACHES = {
-    "default": {"BACKEND": "django.core.cache.backends.locmem.LocMemCache",},
+    "default": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+    },
     "file_resubmit": {
         "BACKEND": "django.core.cache.backends.filebased.FileBasedCache",
         "LOCATION": "/tmp/file_resubmit/",
@@ -129,10 +134,18 @@ CACHES = {
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",},
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
+    {
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+    },
     {"NAME": "hub.password_validation.PasswordDifferentFromPrevious"},
 ]
 
@@ -171,9 +184,6 @@ if USE_S3:
     AWS_DEFAULT_ACL = "public-read"
     AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
     AWS_S3_OBJECT_PARAMETERS = {"CacheControl": "max-age=86400"}
-    PUBLIC_MEDIA_LOCATION = "media"
-    MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/"
-    DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
     # s3 public media settings
     PUBLIC_MEDIA_LOCATION = "media"
     MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/"

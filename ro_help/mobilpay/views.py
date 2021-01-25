@@ -21,7 +21,13 @@ def initialize_payment(request, order):
     return render(
         request,
         "mobilpay/initialize_payment.html",
-        {"data": data, "env_key": env_key, "base_path": base_path, "ngo": ngo, "order": order,},
+        {
+            "data": data,
+            "env_key": env_key,
+            "base_path": base_path,
+            "ngo": ngo,
+            "order": order,
+        },
     )
 
 
@@ -69,7 +75,7 @@ def confirm(request, order):
                     order_id = obj_pm_req.get_order_id()
                     """
                     if notify.action == "confirmed":
-                        """ 
+                        """
                         cand action este confirmed avem certitudinea ca banii au plecat din contul posesorului de
                         card si facem update al starii comenzii si livrarea produsului
                         update DB, SET status = "confirmed/captured"
@@ -91,7 +97,7 @@ def confirm(request, order):
                             to=order.email,
                         )
                     elif notify.action == "confirmed_pending":
-                        """ 
+                        """
                         cand action este confirmed_pending inseamna ca tranzactia este in curs de verificare
                         antifrauda. Nu facem livrare/expediere. In urma trecerii de aceasta verificare se va primi o
                         noua notificare pentru o actiune de confirmare sau anulare.
@@ -100,8 +106,8 @@ def confirm(request, order):
                         error_message = notify.errorMessage
                     elif notify.action == "paid_pending":
                         """
-                        cand action este paid_pending inseamna ca tranzactia este in curs de verificare. 
-                        Nu facem livrare/expediere. In urma trecerii de aceasta verificare se va primi o noua 
+                        cand action este paid_pending inseamna ca tranzactia este in curs de verificare.
+                        Nu facem livrare/expediere. In urma trecerii de aceasta verificare se va primi o noua
                         notificare pentru o actiune de confirmare sau anulare.
                         update DB, SET status = "pending"
                         """

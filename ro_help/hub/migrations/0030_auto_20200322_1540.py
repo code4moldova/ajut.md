@@ -10,5 +10,9 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AlterField(model_name="ngoreportitem", name="date", field=models.DateField(verbose_name="Date"),),
+        migrations.AlterField(
+            model_name="ngoreportitem",
+            name="date",
+            field=models.DateField(verbose_name="Date"),
+        ),
     ]

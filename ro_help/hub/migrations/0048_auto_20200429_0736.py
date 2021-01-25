@@ -302,6 +302,9 @@ class Migration(migrations.Migration):
                 ("county", models.CharField(max_length=50, verbose_name="County")),
                 ("is_county_residence", models.BooleanField(default=False, verbose_name="Is county residence")),
             ],
-            options={"verbose_name_plural": "cities", "unique_together": {("city", "county")},},
+            options={
+                "verbose_name_plural": "cities",
+                "unique_together": {("city", "county")},
+            },
         ),
     ]

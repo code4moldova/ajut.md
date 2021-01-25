@@ -35,6 +35,9 @@ class Migration(migrations.Migration):
                     ),
                 ),
             ],
-            options={"verbose_name": "NGO report item", "verbose_name_plural": "NGO report items",},
+            options={
+                "verbose_name": "NGO report item",
+                "verbose_name_plural": "NGO report items",
+            },
         ),
     ]

@@ -12,7 +12,7 @@ echo "Checking..."
 python3 manage.py check
 
 if [ "$RUN_MIGRATION" == "yes" ] ; then
-  echo "Migrating databse"
+  echo "Migrating database"
   python3 manage.py migrate --run-syncdb
 fi
 
@@ -27,7 +27,7 @@ if [ "$RUN_SEED" == "yes" ] ; then
   python3 manage.py seed
 fi
 
-if [ "$RUN_CREATE_USER_USER" == "yes" ] ; then
+if [ "$RUN_CREATE_SUPER_USER" == "yes" ] ; then
   echo "Create superuser"
   python3 manage.py createsuperuser --noinput
 fi

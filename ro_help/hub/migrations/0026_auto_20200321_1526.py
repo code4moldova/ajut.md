@@ -10,6 +10,12 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveField(model_name="registerngorequest", name="dsu_approved",),
-        migrations.RemoveField(model_name="registerngorequest", name="ffc_approved",),
+        migrations.RemoveField(
+            model_name="registerngorequest",
+            name="dsu_approved",
+        ),
+        migrations.RemoveField(
+            model_name="registerngorequest",
+            name="ffc_approved",
+        ),
     ]

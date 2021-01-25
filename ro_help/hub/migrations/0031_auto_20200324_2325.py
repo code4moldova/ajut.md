@@ -26,6 +26,7 @@ class Migration(migrations.Migration):
             },
         ),
         migrations.AlterModelOptions(
-            name="resourcetag", options={"verbose_name": "Resource tag", "verbose_name_plural": "Resource tags"},
+            name="resourcetag",
+            options={"verbose_name": "Resource tag", "verbose_name_plural": "Resource tags"},
         ),
     ]

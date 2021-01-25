@@ -231,7 +231,9 @@ class NGO(TimeStampedModel):
     users = models.ManyToManyField(User, related_name="ngos")
     description = models.TextField(_("Description"))
     contact_name = models.CharField(_("Contact person's name"), max_length=254)
-    email = models.EmailField(_("Email"),)
+    email = models.EmailField(
+        _("Email"),
+    )
     phone = models.CharField(_("Phone"), max_length=30)
     address = models.CharField(_("Address"), max_length=400)
     cif = models.CharField("CIF", max_length=20, null=True, blank=True)
@@ -384,7 +386,9 @@ class NGOHelper(TimeStampedModel):
     ngo_need = models.ForeignKey(NGONeed, on_delete=models.CASCADE, related_name="helpers")
 
     name = models.CharField(_("Name"), max_length=254)
-    email = models.EmailField(_("Email"),)
+    email = models.EmailField(
+        _("Email"),
+    )
     message = models.TextField(_("Message"))
     phone = models.CharField(_("Phone"), max_length=30, null=True, blank=True)
 
@@ -401,7 +405,10 @@ class NGOHelper(TimeStampedModel):
 class PersonalRequest(TimeStampedModel):
     ngo = models.ForeignKey(NGO, on_delete=models.CASCADE, null=True, blank=True, related_name="requests")
 
-    name = models.CharField(_("Name"), max_length=254,)
+    name = models.CharField(
+        _("Name"),
+        max_length=254,
+    )
     email = models.EmailField(_("Email"), null=True, blank=True)
     phone = models.CharField(_("Phone"), max_length=15)
     city = models.CharField(_("City"), max_length=100)

@@ -10,7 +10,10 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveField(model_name="ngo", name="ibans",),
+        migrations.RemoveField(
+            model_name="ngo",
+            name="ibans",
+        ),
         migrations.AddField(
             model_name="ngoaccount",
             name="ngo",

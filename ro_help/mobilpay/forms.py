@@ -6,7 +6,14 @@ from captcha.widgets import ReCaptchaV3
 
 
 class PaymentOrderForm(forms.ModelForm):
-    captcha = ReCaptchaField(widget=ReCaptchaV3(attrs={"required_score": 0.85,}), label="")
+    captcha = ReCaptchaField(
+        widget=ReCaptchaV3(
+            attrs={
+                "required_score": 0.85,
+            }
+        ),
+        label="",
+    )
 
     class Meta:
         model = models.PaymentOrder

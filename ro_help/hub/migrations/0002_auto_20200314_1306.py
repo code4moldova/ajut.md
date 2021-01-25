@@ -11,6 +11,8 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AlterField(
-            model_name="ngo", name="phone", field=models.CharField(max_length=30, verbose_name="Phone"),
+            model_name="ngo",
+            name="phone",
+            field=models.CharField(max_length=30, verbose_name="Phone"),
         ),
     ]

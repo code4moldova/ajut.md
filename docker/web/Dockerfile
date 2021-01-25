@@ -1,13 +1,4 @@
-FROM python:3.7.4-alpine
-
-RUN apk update && \
-    apk add --no-cache --virtual build-deps python-dev postgresql-dev git python3-dev gcc musl-dev \
-        jpeg-dev zlib-dev freetype-dev lcms2-dev openjpeg-dev \
-        tiff-dev tk-dev tcl-dev harfbuzz-dev fribidi-dev
-
-RUN pip3 install --upgrade pip setuptools \
-    && wget -qO- https://github.com/jwilder/dockerize/releases/download/v0.2.0/dockerize-linux-amd64-v0.2.0.tar.gz | tar -zxf - -C /usr/bin \
-    && chown root:root /usr/bin/dockerize
+FROM python:3.9-alpine
 
 WORKDIR /opt/
 
@@ -16,9 +7,32 @@ ARG ENVIRONMENT=dev
 ENV ENVIRONMENT=${ENVIRONMENT}
 ENV DJANGO_SETTINGS_MODULE=ro_help.settings.${ENVIRONMENT}
 
-# Copy just the requirements for caching
+RUN pip3 install --upgrade pip setuptools \
+    && wget -qO- https://github.com/jwilder/dockerize/releases/download/v0.2.0/dockerize-linux-amd64-v0.2.0.tar.gz | tar -zxf - -C /usr/bin \
+    && chown root:root /usr/bin/dockerize
+
 COPY ./requirements* /opt/
-RUN pip3 install -r requirements-${ENVIRONMENT}.txt
+
+RUN apk update && apk add --no-cache \
+    # for Pillow
+    jpeg-dev \
+    zlib-dev \
+    # for psycopg2
+    libpq
+
+RUN apk add --no-cache --virtual .build-deps \
+    git \
+    build-base \
+    musl-dev \
+    # these 2 are for postgres & gis
+    python3-dev \
+    postgresql-dev\
+    # these 4 are necessary for gevent
+    make \
+    libffi-dev \
+    file \
+    && pip install --no-cache-dir -r requirements-${ENVIRONMENT}.txt \
+    && apk del .build-deps
 
 WORKDIR /opt/ro_help/
 

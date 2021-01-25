@@ -1,0 +1,8 @@
+.github
+.gitignore
+.dockerignore
+buildspec.yml
+Makefile
+LICENCE
+README.md
+venv

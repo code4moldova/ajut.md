@@ -19,7 +19,11 @@ class Migration(migrations.Migration):
                 "verbose_name_plural": "My organizations",
             },
         ),
-        migrations.AddField(model_name="registerngorequest", name="closed", field=models.BooleanField(default=False),),
+        migrations.AddField(
+            model_name="registerngorequest",
+            name="closed",
+            field=models.BooleanField(default=False),
+        ),
         migrations.AlterField(
             model_name="ngo",
             name="avatar",
